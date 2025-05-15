@@ -12,6 +12,7 @@ from pydub import AudioSegment
 import speech_recognition as sr
 from openai import OpenAI
 from dotenv import load_dotenv
+
 from io import BytesIO
 
 load_dotenv()
@@ -374,4 +375,4 @@ def callback():
     return 'OK'
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
